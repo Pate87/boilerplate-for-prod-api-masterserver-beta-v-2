@@ -1,11 +1,26 @@
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
-
+var cors = require('cors')
+var bodyParser = require('body-parser')
+var aylien = require("aylien_textapi");
 
 const app = express()
 
+// to use json
+app.use(cors())
 
+// to use url encoded values
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+
+// set aylien API credentias
+const textapi = new aylien({
+    application_id: process.env.API_ID,
+    application_key: process.env.API_KEY
+});
 
 app.use(express.static('dist'))
 
