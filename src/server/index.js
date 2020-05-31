@@ -15,10 +15,21 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
 })
 
-// designates what port the app will listen to for incoming requests
-app.listen(8090, function () {
-    console.log('Example app listening on port 8090!')
-})
+// Setup Server
+const port = 8090;
+
+// Spin up the server
+const server = app.listen(port, listening);
+
+// Function for the Server to run
+function listening(){
+    console.log(`Weather Server is running on localhost: ${port}`);
+}
+
+// // designates what port the app will listen to for incoming requests
+// app.listen(8090, function () {
+//     console.log('Example app listening on port 8090!')
+// })
 
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
