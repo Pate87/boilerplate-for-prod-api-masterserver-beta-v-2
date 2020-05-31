@@ -8,7 +8,10 @@ export function handleSubmit(event) {
     console.log("::: Form Submitted :::")
     fetch('https://api.aylien.com/api/v1')
     .then(res => res.json())
+    console.log(json())
     .then(function(res) {
         document.getElementById('results').innerHTML = res.message
+        console.log(json())
+        console.log(res.message)
     })
 }
