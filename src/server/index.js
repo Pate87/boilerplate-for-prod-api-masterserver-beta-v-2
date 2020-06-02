@@ -3,7 +3,9 @@ const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 var cors = require('cors')
 var bodyParser = require('body-parser')
-var aylien = require("aylien_textapi");
+const dotenv = require('dotenv')
+dotenv.config()
+var aylien = require('aylien_textapi')
 
 const app = express()
 
