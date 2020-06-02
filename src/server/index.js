@@ -1,11 +1,16 @@
-var path = require('path')
+const path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
-var cors = require('cors')
-var bodyParser = require('body-parser')
-const dotenv = require('dotenv')
-dotenv.config()
-var aylien = require('aylien_textapi')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+
+// calling API URL
+const aylien = require('aylien_textapi')
+
+// save API key & ID
+// const dotenv = requrire('dotenv')
+const dotenv = require('dotenv').config()
+// dotenv.config()
 
 const app = express()
 
@@ -33,14 +38,14 @@ app.get('/', function (req, res) {
 })
 
 // Setup Server
-const port = 8090;
+const port = 3000;
 
 // Spin up the server
 const server = app.listen(port, listening);
 
 // Function for the Server to run
 function listening(){
-    console.log(`Weather Server is running on localhost: ${port}`);
+    console.log(`Server runs on localhost: ${port}`);
 }
 
 // // designates what port the app will listen to for incoming requests
